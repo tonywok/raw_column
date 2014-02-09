@@ -2,7 +2,7 @@ module RawColumn
 
   class JsonProxy
 
-    def initialize(record, column_name=:content)
+    def initialize(record, column_name)
       @raw_content = record.send(:"#{column_name}_before_type_cast")
     end
 

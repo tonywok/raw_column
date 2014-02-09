@@ -9,6 +9,7 @@ module RawColumn
 
     def raw_column(*column_names)
       class_eval do
+        column_names = [:content] if column_names.nil?
         column_names.each do |column_name|
           define_method :"raw_#{column_name}" do
             JsonProxy.new(self, column_name)
